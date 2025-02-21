@@ -421,7 +421,7 @@ FROM DUAL;
 SELECT 
 	EMP_ID, 
 	EMP_NAME, 
-	NVL(PHONE, '없음') AS PHONE
+	NVL (PHONE, '없음') PHONE 
 FROM 
 	EMPLOYEE;
 
@@ -432,10 +432,10 @@ FROM
 -- 이름, 급여, 보너스, 급여 * 보너스 조회
 -- 단, 보너스가 없는 사원은 0으로 조회
 SELECT
-	EMP_NAME,
-	SALARY,
-	NVL(BONUS, 0) AS BONUS,
-	SALARY * NVL(BONUS, 0) AS "SALARY * BONUS"
+	EMP_NAME ,
+	SALARY ,
+	NVL(BONUS,0)  BONUS ,
+	SALARY  * NVL(BONUS,0) AS "SALARY * BONUS"
 FROM EMPLOYEE;
 
 
@@ -444,11 +444,11 @@ FROM EMPLOYEE;
 -- 단, 전화번호가 없으면 '없음'
 -- 전화번호가 있으면 '010********' 형식으로 변경해서 조회
 SELECT
-	EMP_ID,
-	EMP_NAME,
-	NVL2(PHONE, 
-		RPAD(SUBSTR(PHONE,1,3), LENGTH(PHONE), '*'), 
-		'없음') AS PHONE
+	EMP_ID ,
+	EMP_NAME ,
+	NVL2(PHONE,
+	 RPAD(SUBSTR(PHONE,1,3),LENGTH(PHONE),'*'),
+	 '없음') PHONE
 FROM 
 	EMPLOYEE;
 
@@ -522,7 +522,7 @@ ORDER BY
 -- 사번, 이름, 급여, 구분을 조회
 -- 구분은 받는 급여에 따라 초급, 중급, 고급으로 나눔
 -- 급여 600만 이상 -> '고급'
--- 급여 400만 이상, 600만 미만 ->'중급'
+-- 급여 400만 이상, 600만 미만 -> '중급'
 -- 급여 400만 미만 -> '초급'
 -- 단, 부서 코드가 'D6','D9'이 사원만, 
 -- 부서코드 오름차순으로 조회
@@ -599,7 +599,7 @@ FROM
 
 -- 모든 사원의 급여 평균 보다
 -- 많이 받는 사원의 
--- 이름, 급여 급여 내림차순 조회
+-- 이름, 급여, 급여 내림차순 조회
 SELECT 
 	EMP_NAME,
 	SALARY
@@ -617,7 +617,7 @@ ORDER BY
 
 -----------------------------------------------
 
-/* MAX(컬럼명), MIN(컬럼명) : 최대,최소 값 반환*/
+/* MAX(컬럼명), MIN(컬럼명) : 최대,최소값 반환*/
 
 -- 부서코드가 'D6'인 사원 중 
 -- 제일 높은 급여, 제일 낮은 급여 조회
@@ -651,11 +651,11 @@ FROM
  * 
  * 1) COUNT(*)
  * 	- 조회된 모든 행의 개수를 반환
- *   (NULL이 포함 행도 개수 증가)
+ *   (NULL이 포함된 행도 개수에 추가해서 계산)
  * 
  * 2) COUNT(컬럼명)
  * 	- 지정된 컬럼 값이 NULL인 행을 제외하고 
- *    나머지 행의 개수 반환
+ *    나머지 행의 개수 반환 (카운트 수행)
  * 
  * 3) COUNT(DISTINCT 컬럼명)
  *  - 컬럼 값이 중복되는 경우를 제외하고 행의 개수 반환
