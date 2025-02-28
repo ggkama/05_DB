@@ -186,7 +186,8 @@ FROM EMPLOYEE ;
 -- EMPLOYEE 테이블에서 
 -- 모든 사원의 사번, 이름, 급여(원), 연봉(급여*12) 조회
 -- 단, 컬럼명은 모두 별칭 적용
-SELECT EMP_ID 사번, EMP_NAME 이름, SALARY "급여(원)", SALARY*12 "연봉"
+SELECT EMP_ID 사번, EMP_NAME 이름,
+SALARY "급여(원)", SALARY*12 "연봉"
 FROM EMPLOYEE;
 
 
@@ -564,8 +565,8 @@ WHERE EMAIL LIKE '___#_%' ESCAPE '#'; -- 12행 조회
 
 -- EMPLOYEE 테이블의 모든 사원을
 -- 이름 오름차순으로 정렬
-SELECT EMP_NAME 
-FROM EMPLOYEE 
+SELECT EMP_NAME
+FROM EMPLOYEE
 ORDER BY EMP_NAME ASC;
 
 -- 이름 오름차순으로 정렬
