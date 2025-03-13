@@ -336,6 +336,7 @@ INSERT VALUES (EMP_M02.EMP_ID, EMP_M02.EMP_NAME, EMP_M02.EMP_NO,
 
 SELECT * FROM EMP_M01;
 
+
 /* 사용 예시 상황
  * - 회원 정보 중 선택사항을 수정, 추가할 때
  * - 자주 조회되는 데이터 전용 테이블과
