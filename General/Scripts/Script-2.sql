@@ -1,0 +1,6 @@
+SELECT *
+  FROM DBa_users
+ WHERE username='KH08_KTY';
+
+
+ALTER USER KH08_KTY ACCOUNT UNLOCK;
